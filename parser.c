@@ -222,6 +222,11 @@ void parse_file ( char * filename,
       display( s );
     }//end display
 
+    else if ( strncmp(line, "clear", strlen(line)) == 0 ) {
+      //printf("CLEAR\t%s", line);
+        edges = new_matrix(4, 1);
+    }//end display
+
     else if ( strncmp(line, "save", strlen(line)) == 0 ) {
       fgets(line, sizeof(line), f);
       *strchr(line, '\n') = 0;

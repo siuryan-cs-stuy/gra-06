@@ -61,7 +61,7 @@ void add_sphere( struct matrix * edges,
 
     struct matrix *sphere = generate_sphere(cx, cy, cz, r, step);
     for (i = 0; i < sphere->cols; i++) {
-        add_edge(edges, sphere->m[i][0], sphere->m[i][1], sphere->m[i][2], sphere->m[i][0], sphere->m[i][1], sphere->m[i][2]);
+        add_edge(edges, sphere->m[0][i], sphere->m[1][i], sphere->m[2][i], sphere->m[0][i], sphere->m[1][i], sphere->m[2][i]);
     }
     free_matrix(sphere);
 }
@@ -84,9 +84,9 @@ struct matrix * generate_sphere(double cx, double cy, double cz,
     int i, theta;
     int j, phi;
     for (i = 1; i <= step; i++) {
-        phi = (double)i/step * M_PI;
+        phi = (double)i/step * 2*M_PI;
         for (j = 1; j <= step; j++) {
-            theta = (double)i/step * 2*M_PI;
+            theta = (double)i/step * M_PI;
             double x = r*cos(theta) + cx;
             double y = r*sin(theta)*cos(phi) + cy;
             double z = r*sin(theta)*sin(phi) + cz;
