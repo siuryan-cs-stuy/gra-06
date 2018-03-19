@@ -146,9 +146,9 @@ struct matrix * generate_torus( double cx, double cy, double cz,
         phi = (double)i/step * 2*M_PI;
         for (j = 0; j < step; j++) {
             theta = (double)j/step * 2*M_PI;
-            double x = cos(phi) * (r2*cos(theta) + r1) + cx;
-            double y= r2*sin(theta) + cy;
-            double z = -sin(phi) * (r2*cos(theta) + r1) + cz;
+            double x = cos(phi) * (r1*cos(theta) + r2) + cx;
+            double y = r1*sin(theta) + cy;
+            double z = -sin(phi) * (r1*cos(theta) + r2) + cz;
             add_point(torus, x, y, z);
         }
     }

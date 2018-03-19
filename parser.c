@@ -125,7 +125,7 @@ void parse_file ( char * filename,
       //printf("TORUS\t%s", line);
 
       sscanf(line, "%lf %lf %lf %lf %lf",
-             xvals, yvals, zvals, &r2, &r1);
+             xvals, yvals, zvals, &r1, &r2);
       add_torus( edges, xvals[0], yvals[0], zvals[0], r1, r2, step);
     }//end of torus
     
